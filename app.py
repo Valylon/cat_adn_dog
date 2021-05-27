@@ -19,16 +19,6 @@ for dirname, _, filenames in os.walk('/input'):
 import zipfile
 import glob
 
-files_zip_ext = glob.glob('/*.zip')
-print(files_zip_ext)
-def extract_data_from_zip(file_path):
-    with zipfile.ZipFile(file_path, "r") as zip_ref:
-        zip_ref.extractall("/data")
-
-# Extract train and test
-for file_path in files_zip_ext:
-    extract_data_from_zip(file_path)
-
 
 train_data = len(os.listdir('/train'))
 test_data = len(os.listdir('/test1'))
